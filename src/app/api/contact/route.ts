@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+
+// Force dynamic so Next.js never statically analyses this route at build time
+export const dynamic = "force-dynamic";
 
 interface ContactPayload {
   name: string;
@@ -9,7 +11,6 @@ interface ContactPayload {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  const resend = new Resend(process.env.RESEND_API_KEY);
   let body: Partial<ContactPayload>;
 
   try {
@@ -28,6 +29,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   try {
+    // Lazy import keeps Resend out of the module-evaluation bundle
+    const { Resend } = await import("resend");
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "daxrajani@gmail.com",

@@ -44,7 +44,7 @@ export default function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/10"
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
           <button
             onClick={handleScrollTop}
             aria-label="Scroll to top"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
             DR
           </button>
@@ -65,7 +65,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -79,7 +79,7 @@ export default function Navbar() {
               href={personalInfo.resumeFile}
               download
               aria-label="Download resume PDF"
-              className="border border-blue-500 text-blue-400 hover:bg-blue-500/10 rounded-lg px-4 py-2 text-sm transition-colors duration-200"
+              className="border border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg px-4 py-2 text-sm transition-colors duration-200"
             >
               Resume
             </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
             >
               <GithubIcon size={20} aria-hidden="true" />
             </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
             >
               <LinkedinIcon size={20} aria-hidden="true" />
             </a>
@@ -109,7 +109,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            className="md:hidden text-slate-600 hover:text-slate-900 transition-colors"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -128,7 +128,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-[#0a0a0f]/95 backdrop-blur-md border-b border-white/10"
+            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-b border-slate-200"
           >
             <nav
               className="flex flex-col px-4 py-4 gap-1"
@@ -138,7 +138,7 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left py-3 text-gray-300 hover:text-blue-400 transition-colors duration-200 border-b border-white/5 last:border-0"
+                  className="text-left py-3 text-slate-600 hover:text-blue-600 transition-colors duration-200 border-b border-slate-100 last:border-0"
                 >
                   {link.label}
                 </button>
@@ -148,7 +148,7 @@ export default function Navbar() {
                 download
                 onClick={() => setMobileOpen(false)}
                 aria-label="Download resume PDF"
-                className="mt-3 text-center border border-blue-500 text-blue-400 hover:bg-blue-500/10 rounded-lg px-4 py-2 text-sm transition-colors duration-200"
+                className="mt-3 text-center border border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg px-4 py-2 text-sm transition-colors duration-200"
               >
                 Download Resume
               </a>

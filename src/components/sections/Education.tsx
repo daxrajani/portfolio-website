@@ -17,11 +17,11 @@ export default function Education() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Education
           </h2>
-          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-violet-600 rounded-full" />
-          <p className="text-gray-400 mt-4">Academic background</p>
+          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full" />
+          <p className="text-slate-500 mt-4">Academic background</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
@@ -32,31 +32,31 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:shadow-xl hover:shadow-blue-500/10 hover:scale-[1.01] transition-all duration-300"
+              className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 hover:scale-[1.01] transition-all duration-300"
             >
               {/* Degree & field */}
-              <h3 className="text-xl font-bold text-white leading-snug">
+              <h3 className="text-xl font-bold text-slate-900 leading-snug">
                 {edu.degree}
               </h3>
-              <p className="text-blue-400 font-medium mt-1">{edu.field}</p>
+              <p className="text-blue-600 font-medium mt-1">{edu.field}</p>
 
               {/* University & location */}
-              <p className="text-gray-300 mt-3 font-medium">{edu.university}</p>
-              <p className="flex items-center gap-1 text-gray-400 text-sm mt-1">
+              <p className="text-slate-700 mt-3 font-medium">{edu.university}</p>
+              <p className="flex items-center gap-1 text-slate-500 text-sm mt-1">
                 <MapPin size={13} aria-hidden="true" />
                 {edu.location}
               </p>
 
               {/* Duration badge */}
-              <span className="inline-block mt-3 font-mono text-sm bg-white/5 border border-white/10 rounded-full px-3 py-1 text-gray-300">
+              <span className="inline-block mt-3 font-mono text-sm bg-slate-50 border border-slate-200 rounded-full px-3 py-1 text-slate-600">
                 {edu.duration}
               </span>
 
               {/* Grade */}
               {edu.grade && (
-                <p className="text-gray-400 text-sm mt-2">
+                <p className="text-slate-500 text-sm mt-2">
                   GPA:{" "}
-                  <span className="text-blue-400 font-semibold">{edu.grade}</span>
+                  <span className="text-blue-600 font-semibold">{edu.grade}</span>
                 </p>
               )}
 
@@ -66,7 +66,7 @@ export default function Education() {
                   {edu.courses.map((course) => (
                     <span
                       key={course}
-                      className="bg-white/5 text-gray-300 border border-white/10 rounded-full px-3 py-1 text-xs"
+                      className="bg-slate-50 text-slate-600 border border-slate-200 rounded-full px-3 py-1 text-xs"
                     >
                       {course}
                     </span>
@@ -85,11 +85,11 @@ export default function Education() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             Achievements &amp; Recognition
           </h2>
-          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-violet-600 rounded-full" />
-          <p className="text-gray-400 mt-4">A few things beyond the IDE</p>
+          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full" />
+          <p className="text-slate-500 mt-4">A few things beyond the IDE</p>
         </motion.div>
 
         <div className="flex flex-col gap-3">
@@ -102,24 +102,24 @@ export default function Education() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
-                  className="relative bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 overflow-hidden gold-shimmer"
+                  className="relative bg-amber-50 border border-amber-200 rounded-2xl p-5 overflow-hidden gold-shimmer"
                 >
                   <div className="relative z-10 flex items-start gap-4">
                     <div className="shrink-0 mt-0.5">
-                      <Trophy size={22} className="text-amber-400" aria-hidden="true" />
+                      <Trophy size={22} className="text-amber-500" aria-hidden="true" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-start justify-between gap-2">
-                        <h3 className="text-amber-300 font-bold leading-snug">
+                        <h3 className="text-amber-700 font-bold leading-snug">
                           {award.title}
                         </h3>
-                        <span className="text-gray-400 text-sm font-mono shrink-0">
+                        <span className="text-slate-500 text-sm font-mono shrink-0">
                           {award.date}
                         </span>
                       </div>
-                      <p className="text-gray-400 text-sm mt-0.5">{award.issuer}</p>
+                      <p className="text-slate-500 text-sm mt-0.5">{award.issuer}</p>
                       {award.description && (
-                        <p className="text-gray-400 text-sm mt-2">
+                        <p className="text-slate-500 text-sm mt-2">
                           {award.description}
                         </p>
                       )}
@@ -136,24 +136,24 @@ export default function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:shadow-lg hover:shadow-blue-500/10 transition-shadow duration-200"
+                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-200"
               >
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 mt-0.5">
-                    <Award size={20} className="text-blue-400" aria-hidden="true" />
+                    <Award size={20} className="text-blue-600" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-start justify-between gap-2">
-                      <h3 className="text-white font-bold leading-snug">
+                      <h3 className="text-slate-900 font-bold leading-snug">
                         {award.title}
                       </h3>
-                      <span className="text-gray-400 text-sm font-mono shrink-0">
+                      <span className="text-slate-500 text-sm font-mono shrink-0">
                         {award.date}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mt-0.5">{award.issuer}</p>
+                    <p className="text-slate-500 text-sm mt-0.5">{award.issuer}</p>
                     {award.description && (
-                      <p className="text-gray-400 text-sm mt-2">
+                      <p className="text-slate-500 text-sm mt-2">
                         {award.description}
                       </p>
                     )}

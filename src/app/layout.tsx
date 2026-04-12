@@ -40,7 +40,7 @@ export default function RootLayout({
           <div className="bg-blob bg-blob-violet" />
         </div>
 
-        <div className="bg-[#0a0a0f] text-white min-h-screen relative">
+        <div className="bg-[#F8FAFC] text-slate-900 min-h-screen relative">
           <Navbar />
           {children}
           <Footer />

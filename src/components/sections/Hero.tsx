@@ -4,17 +4,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { ChevronDown } from "lucide-react";
-import dynamic from "next/dynamic";
-import type { ISourceOptions } from "@tsparticles/engine";
 import type { Easing } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { personalInfo } from "@/data/portfolio";
-
-// Lazy-load tsParticles to avoid SSR issues
-const Particles = dynamic(
-  () => import("@tsparticles/react").then((mod) => mod.Particles),
-  { ssr: false }
-);
 
 const EASE_OUT: Easing = "easeOut";
 
@@ -41,7 +33,6 @@ const buildTypeSequence = (taglines: string[]): (string | number)[] => {
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
-  const [engineReady, setEngineReady] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -49,51 +40,9 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Initialize tsParticles engine once on mount (v3 API: initParticlesEngine)
-  useEffect(() => {
-    let cancelled = false;
-    import("@tsparticles/react")
-      .then(({ initParticlesEngine }) =>
-        import("@tsparticles/slim").then(({ loadSlim }) =>
-          initParticlesEngine(async (engine) => {
-            await loadSlim(engine);
-          })
-        )
-      )
-      .then(() => {
-        if (!cancelled) setEngineReady(true);
-      })
-      .catch(() => {
-        // Particles are progressive enhancement; silently skip on failure
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   const handleScrollToProjects = () => {
     const el = document.querySelector("#projects");
     if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const particlesOptions: ISourceOptions = {
-    preset: "slim",
-    background: { color: { value: "transparent" } },
-    particles: {
-      number: { value: 60, density: { enable: true, width: 1200 } },
-      color: { value: ["#ffffff", "#2563eb"] },
-      opacity: { value: 0.25 },
-      size: { value: 1.5 },
-      move: { enable: true, speed: 0.8, direction: "none" as const, random: true, outModes: { default: "out" as const } },
-      links: {
-        enable: true,
-        distance: 120,
-        opacity: 0.15,
-        color: "#2563eb",
-        width: 1,
-      },
-    },
-    detectRetina: true,
   };
 
   const typeSequence = buildTypeSequence(personalInfo.tagline);
@@ -103,20 +52,14 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4"
     >
-      {/* tsParticles canvas — rendered only after engine is initialised */}
-      {engineReady && (
-        <Particles
-          id="hero-particles"
-          options={particlesOptions}
-          className="absolute inset-0 z-0"
-        />
-      )}
+      {/* PCB-inspired circuit dot-grid background */}
+      <div className="hero-grid" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full gap-6">
-        {/* Eyebrow label — first tagline word used as descriptor */}
+        {/* Eyebrow label */}
         <motion.div {...fadeUp(0)}>
-          <span className="inline-flex items-center gap-1 bg-blue-600/10 border border-blue-500/30 text-blue-400 rounded-full px-4 py-1 text-xs font-mono uppercase tracking-widest">
+          <span className="inline-flex items-center gap-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-full px-4 py-1 text-xs font-mono uppercase tracking-widest">
             {personalInfo.tagline[0].toUpperCase()}
             <span className="animate-blink ml-1" aria-hidden="true">
               ▌
@@ -127,10 +70,10 @@ export default function Hero() {
         {/* Main heading */}
         <motion.h1
           {...scaleUp(0.1)}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-white"
+          className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900"
         >
           Hi, I&apos;m{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
             {personalInfo.name}
           </span>
         </motion.h1>
@@ -143,14 +86,14 @@ export default function Hero() {
             speed={60}
             deletionSpeed={40}
             repeat={Infinity}
-            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+            className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent"
           />
         </motion.div>
 
         {/* Bio */}
         <motion.p
           {...fadeUp(0.3)}
-          className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed"
+          className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed"
         >
           {personalInfo.bio}
         </motion.p>
@@ -174,7 +117,7 @@ export default function Hero() {
             href={personalInfo.resumeFile}
             download
             aria-label="Download resume PDF"
-            className="border border-white/20 hover:border-blue-500/50 hover:bg-white/5 text-white rounded-xl px-8 py-3 font-semibold transition-all duration-200"
+            className="border border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-slate-700 rounded-xl px-8 py-3 font-semibold transition-all duration-200"
           >
             Download Resume
           </motion.a>
@@ -190,7 +133,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+            className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
           >
             <GithubIcon size={22} aria-hidden="true" />
           </a>
@@ -199,7 +142,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+            className="text-slate-500 hover:text-blue-600 transition-colors duration-200"
           >
             <LinkedinIcon size={22} aria-hidden="true" />
           </a>
@@ -220,7 +163,7 @@ export default function Hero() {
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               aria-hidden="true"
             >
-              <ChevronDown size={28} className="text-gray-500" />
+              <ChevronDown size={28} className="text-slate-400" />
             </motion.div>
           </motion.div>
         )}

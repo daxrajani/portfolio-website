@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:bg-white/[0.08] transition-all duration-200";
+    "w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-200";
 
   return (
     <section id="contact" className="py-24 px-4">
@@ -66,9 +66,9 @@ export default function Contact() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Contact</h2>
-          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-violet-600 rounded-full" />
-          <p className="text-gray-400 mt-4 max-w-xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Contact</h2>
+          <div className="mt-2 h-[2px] w-[60px] bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full" />
+          <p className="text-slate-500 mt-4 max-w-xl">
             Open to embedded firmware, AI embedded, and systems engineering
             roles across Canada.
           </p>
@@ -84,10 +84,10 @@ export default function Contact() {
             className="order-2 md:order-1 flex flex-col gap-6 justify-center"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
                 Let&apos;s Talk
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-slate-500 text-sm leading-relaxed">
                 Currently available for full-time roles.
                 <br />
                 Response within 24 hours.
@@ -99,9 +99,9 @@ export default function Contact() {
               <a
                 href={`mailto:${personalInfo.email}`}
                 aria-label={`Email ${personalInfo.email}`}
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 group"
+                className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors duration-200 group"
               >
-                <Mail size={18} className="text-blue-400 shrink-0" aria-hidden="true" />
+                <Mail size={18} className="text-blue-600 shrink-0" aria-hidden="true" />
                 <span className="group-hover:underline">{personalInfo.email}</span>
               </a>
 
@@ -111,9 +111,9 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn profile"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 group"
+                className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors duration-200 group"
               >
-                <LinkedinIcon size={18} className="text-blue-400 shrink-0" aria-hidden="true" />
+                <LinkedinIcon size={18} className="text-blue-600 shrink-0" aria-hidden="true" />
                 <span className="group-hover:underline text-sm">
                   {personalInfo.linkedin.replace(/^https?:\/\//, "")}
                 </span>
@@ -125,23 +125,23 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub profile"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200 group"
+                className="flex items-center gap-3 text-slate-600 hover:text-slate-900 transition-colors duration-200 group"
               >
-                <GithubIcon size={18} className="text-blue-400 shrink-0" aria-hidden="true" />
+                <GithubIcon size={18} className="text-blue-600 shrink-0" aria-hidden="true" />
                 <span className="group-hover:underline text-sm">
                   {personalInfo.github.replace(/^https?:\/\//, "")}
                 </span>
               </a>
 
               {/* Location */}
-              <div className="flex items-center gap-3 text-gray-300">
-                <MapPin size={18} className="text-blue-400 shrink-0" aria-hidden="true" />
+              <div className="flex items-center gap-3 text-slate-600">
+                <MapPin size={18} className="text-blue-600 shrink-0" aria-hidden="true" />
                 <span className="text-sm">{personalInfo.location}</span>
               </div>
             </div>
 
-            <p className="text-gray-500 text-sm italic">
-              Open to Toronto, Markham, Montreal, and remote across Canada.
+            <p className="text-slate-400 text-sm italic">
+              Open to relocation anywhere across Canada — in-person, hybrid, or fully remote.
             </p>
           </motion.div>
 
@@ -151,7 +151,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="order-1 md:order-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8"
+            className="order-1 md:order-2 bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8"
           >
             <form onSubmit={handleSubmit} noValidate>
               <div className="flex flex-col gap-4">
@@ -253,7 +253,7 @@ export default function Contact() {
                   disabled={formState === "loading"}
                   whileHover={formState !== "loading" ? { scale: 1.01, opacity: 0.95 } : {}}
                   whileTap={formState !== "loading" ? { scale: 0.99 } : {}}
-                  className="w-full bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl py-3 font-semibold text-white disabled:opacity-60 disabled:cursor-not-allowed transition-opacity duration-200"
+                  className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl py-3 font-semibold text-white disabled:opacity-60 disabled:cursor-not-allowed transition-opacity duration-200"
                 >
                   {formState === "loading" ? (
                     <span className="flex items-center justify-center gap-2">
@@ -270,7 +270,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-green-400 text-sm"
+                    className="flex items-center gap-2 text-green-600 text-sm"
                     role="status"
                     aria-live="polite"
                   >
@@ -284,7 +284,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-400 text-sm"
+                    className="flex items-center gap-2 text-red-600 text-sm"
                     role="alert"
                     aria-live="assertive"
                   >
@@ -292,7 +292,7 @@ export default function Contact() {
                     Something went wrong. Please email me directly at{" "}
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="underline hover:text-red-300"
+                      className="underline hover:text-red-500"
                     >
                       {personalInfo.email}
                     </a>
