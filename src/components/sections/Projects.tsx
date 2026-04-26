@@ -42,12 +42,12 @@ export default function Projects() {
 
               {/* Hardware photo (optional) */}
               {project.image && (
-                <div className="relative w-full h-48 overflow-hidden bg-slate-100 shrink-0">
+                <div className="relative w-full h-56 overflow-hidden bg-slate-100 shrink-0">
                   <Image
                     src={project.image}
                     alt={project.imageAlt ?? project.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
