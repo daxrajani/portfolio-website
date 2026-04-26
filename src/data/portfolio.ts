@@ -38,6 +38,8 @@ export interface Project {
   tech: string[];
   github: string | null;
   demo: string | null;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface SkillGroup {
@@ -77,7 +79,7 @@ export const personalInfo: PersonalInfo = {
   email: "daxrajani@gmail.com",
   phone: "343.988.3978",
   location: "Montreal, QC, Canada",
-  linkedin: "https://linkedin.com/in/dax-rajani-3430a1141",
+  linkedin: "https://linkedin.com/in/daxrajani",
   github: "https://github.com/daxrajani",
   resumeFile: "/DaxRajani_Resume.pdf",
 };
@@ -153,35 +155,38 @@ export const workExperience: WorkExperience[] = [
 
 export const projects: Project[] = [
   {
-    name: "Health Symptom Analyzer",
-    subtitle: "Applied ML Project — Concordia University (Fall 2025)",
+    name: "Zephyr BLE Sensor Node",
+    subtitle: "Embedded Firmware Project — Zephyr BLE Peripheral",
     description:
-      "Built an end-to-end machine learning pipeline to predict likely diseases from user-entered symptoms using a weighted 7-model soft-voting ensemble. Delivered both CLI and Streamlit interfaces with fast real-time inference, confusion-matrix based evaluation, and explainable model outputs.",
+      "BLE 5 peripheral firmware on nRF52840 built with Zephyr RTOS. Implements a custom 128-bit GATT service with temperature, humidity, and configurable sample rate characteristics. Features LE Secure Connections pairing, per-characteristic CCCD notification tracking, NVS-backed settings persistence, Eddystone-URL beacon advertising, and automatic re-advertising on disconnect via Zephyr work queue.",
     tech: [
-      "Python",
-      "scikit-learn",
-      "XGBoost",
-      "NumPy",
-      "Pandas",
-      "Streamlit",
-      "Matplotlib",
+      "C",
+      "Zephyr RTOS",
+      "BLE 5",
+      "GATT",
+      "nRF52840",
+      "LE Secure Connections",
+      "NVS",
+      "Embedded Security",
     ],
-    github: "https://github.com/daxrajani/AppliedML_Fall2025_Project",
+    github: "https://github.com/daxrajani/zephyr_ble_app",
     demo: null,
+    image: "/projects/hardware_setup.jpg",
+    imageAlt: "nRF52840 DK running Dax_BLE firmware connected via nRF Connect",
   },
   {
     name: "Secure A/B OTA Bootloader on nRF52840",
     subtitle: "Embedded Firmware Project — Zephyr + MCUboot",
     description:
-      "Implemented a secure BLE firmware update reference for nRF52840 using MCUboot with A/B slots, ECDSA image signing, automatic image confirmation, and rollback on failed boot. Built and validated OTA flow over BLE from mobile tooling, with static partitioning and CI checks for signed image integrity.",
+      "Production-grade OTA firmware update system on nRF52840 using MCUboot with swap-scratch A/B slots, ECDSA-P256 image signing, and BLE SMP wireless delivery via nRF Connect mobile. Implements automatic image confirmation and rollback on boot failure, static partition pinning across NCS upgrades, and GitHub Actions CI that builds and verifies signed binaries on every push.",
     tech: [
       "C",
-      "Zephyr RTOS",
       "MCUboot",
-      "BLE",
-      "MCUmgr",
+      "Zephyr RTOS",
+      "BLE SMP",
       "ECDSA",
       "nRF52840",
+      "OTA",
       "GitHub Actions",
     ],
     github: "https://github.com/daxrajani/nrf52840-mcuboot-ble-ota",
@@ -201,23 +206,6 @@ export const projects: Project[] = [
       "Google Cloud Storage",
     ],
     github: "https://github.com/daxrajani/dss_project",
-    demo: null,
-  },
-  {
-    name: "BLE Sensor Node with Secure Telemetry",
-    subtitle: "Embedded Firmware Project — Zephyr BLE Peripheral",
-    description:
-      "Developed Zephyr-based BLE peripheral firmware with encrypted GATT access, bonded pairing flow, persistent runtime configuration in NVS, and background sensor updates with per-characteristic notifications. Added low-friction device discovery via beacon-style advertising payloads for app-less scanning.",
-    tech: [
-      "C",
-      "Zephyr RTOS",
-      "BLE",
-      "GATT",
-      "NVS",
-      "nRF52840",
-      "Embedded Security",
-    ],
-    github: "https://github.com/daxrajani/zephyr_ble_app",
     demo: null,
   },
 ];
@@ -242,6 +230,9 @@ export const skills: SkillGroup[] = [
     category: "RTOS & Operating Systems",
     skills: [
       "FreeRTOS",
+      "Zephyr RTOS",
+      "MCUboot",
+      "nRF Connect SDK",
       "Yocto Linux",
       "Embedded Linux",
       "Cross-compiler Toolchains",

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import { projects } from "@/data/portfolio";
 
@@ -38,6 +39,19 @@ export default function Projects() {
             >
               {/* Top accent gradient line */}
               <div className="h-[3px] w-full bg-gradient-to-r from-blue-600 to-emerald-600 rounded-t-2xl shrink-0" />
+
+              {/* Hardware photo (optional) */}
+              {project.image && (
+                <div className="relative w-full h-48 overflow-hidden bg-slate-100 shrink-0">
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt ?? project.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              )}
 
               {/* Card body */}
               <div className="p-6 flex flex-col flex-1">

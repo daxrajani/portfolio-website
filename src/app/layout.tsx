@@ -14,11 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Dax Rajani | Embedded Firmware Engineer",
   description:
-    "Embedded firmware engineer with 2 years production experience in ARM Cortex-M, FreeRTOS, and BLE. MEng Concordia 2026.",
+    "Embedded firmware engineer specializing in ARM Cortex-M, Zephyr RTOS, BLE, and MCUboot. MEng ECE Concordia 2026. Open work permit — available for full-time roles across Canada.",
   openGraph: {
     title: "Dax Rajani | Embedded Firmware Engineer",
     description:
-      "Embedded firmware engineer with 2 years production experience in ARM Cortex-M, FreeRTOS, and BLE. MEng Concordia 2026.",
+      "Embedded firmware engineer specializing in ARM Cortex-M, Zephyr RTOS, BLE, and MCUboot. MEng ECE Concordia 2026. Open work permit — available for full-time roles across Canada.",
     type: "website",
   },
   twitter: {
