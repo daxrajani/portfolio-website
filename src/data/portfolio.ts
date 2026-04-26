@@ -153,6 +153,23 @@ export const workExperience: WorkExperience[] = [
 
 export const projects: Project[] = [
   {
+    name: "Health Symptom Analyzer",
+    subtitle: "Applied ML Project — Concordia University (Fall 2025)",
+    description:
+      "Built an end-to-end machine learning pipeline to predict likely diseases from user-entered symptoms using a weighted 7-model soft-voting ensemble. Delivered both CLI and Streamlit interfaces with fast real-time inference, confusion-matrix based evaluation, and explainable model outputs.",
+    tech: [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "NumPy",
+      "Pandas",
+      "Streamlit",
+      "Matplotlib",
+    ],
+    github: "https://github.com/daxrajani/AppliedML_Fall2025_Project",
+    demo: null,
+  },
+  {
     name: "Secure A/B OTA Bootloader on nRF52840",
     subtitle: "Embedded Firmware Project — Zephyr + MCUboot",
     description:
