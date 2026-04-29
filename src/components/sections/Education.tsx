@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { MapPin, Award, Trophy } from "lucide-react";
 import { education, awards } from "@/data/portfolio";
 import HighlightedText from "@/components/ui/HighlightedText";
+import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 px-4">
+    <section id="education" className="py-24 px-4 relative overflow-hidden">
+      <CreativeSectionDecor variant="education" />
       <div className="max-w-6xl mx-auto">
 
         {/* ── Part A: Education ─────────────────────────── */}

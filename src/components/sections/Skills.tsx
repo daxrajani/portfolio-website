@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
+import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 // Core-stack entries are derived from portfolio skill groups to avoid hardcoding.
 // We pull one representative item from each primary embedded-systems category.
@@ -24,7 +25,8 @@ const coreStack: string[] = skills.flatMap((group) => {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-4">
+    <section id="skills" className="py-24 px-4 relative overflow-hidden">
+      <CreativeSectionDecor variant="skills" />
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <motion.div

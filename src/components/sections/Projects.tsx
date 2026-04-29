@@ -6,10 +6,12 @@ import Image from "next/image";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import HighlightedText from "@/components/ui/HighlightedText";
 import { projects } from "@/data/portfolio";
+import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4">
+    <section id="projects" className="py-24 px-4 relative overflow-hidden">
+      <CreativeSectionDecor variant="projects" />
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <motion.div

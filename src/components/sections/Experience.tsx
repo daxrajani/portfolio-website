@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { workExperience } from "@/data/portfolio";
 import HighlightedText from "@/components/ui/HighlightedText";
+import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 function RoleBadge({ type }: { type: string }) {
   if (type === "Full-time") {
@@ -22,7 +23,8 @@ function RoleBadge({ type }: { type: string }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4">
+    <section id="experience" className="py-24 px-4 relative overflow-hidden">
+      <CreativeSectionDecor variant="experience" />
       <div className="max-w-4xl mx-auto">
         {/* Section heading */}
         <motion.div
