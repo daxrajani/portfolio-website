@@ -7,7 +7,7 @@ import { skills } from "@/data/portfolio";
 // We pull one representative item from each primary embedded-systems category.
 const CORE_CATEGORY_PICKS: Record<string, string> = {
   Languages: "C",
-  "Microcontrollers & SoCs": "nRF52840",
+  "Microcontrollers & SoCs": "ARM Cortex M BLE Controller",
   "RTOS & OS": "FreeRTOS",
   "Wireless Protocols": "BLE 5.x (Central + Peripheral)",
   "Debug & Tools": "JTAG",

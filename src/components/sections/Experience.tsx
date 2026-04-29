@@ -7,14 +7,14 @@ import { workExperience } from "@/data/portfolio";
 
 /** Highlight quantified numbers inside bullet text */
 function HighlightedBullet({ text }: { text: string }) {
-  // Match percentages, large numbers with +, and short durations like "2 weeks"
+  // Match percentages, scaled numbers, and short durations.
   const parts = text.split(
-    /(\b\d+[\,\.]?\d*%|\b4[,.]?000\+|\b2 weeks\b)/g
+    /(\b\d+[,.]?\d*%|\b\d+[+]|\b\d+\s*(?:days?|weeks?)\b|\b\d+\s*to\s*\d+\s*seconds\b)/g
   );
   return (
     <span className="text-slate-600 text-sm leading-relaxed">
       {parts.map((part, i) =>
-        /(\b\d+[\,\.]?\d*%|\b4[,.]?000\+|\b2 weeks\b)/.test(part) ? (
+        /(\b\d+[,.]?\d*%|\b\d+[+]|\b\d+\s*(?:days?|weeks?)\b|\b\d+\s*to\s*\d+\s*seconds\b)/.test(part) ? (
           <span key={i} className="text-blue-600 font-semibold">
             {part}
           </span>

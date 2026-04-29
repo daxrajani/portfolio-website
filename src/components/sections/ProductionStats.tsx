@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const stats = [
   { value: "4", label: "Production Firmware Projects Shipped" },
   { value: "3", label: "ARM Cortex-M Architectures (M0+, M4, M33)" },
-  { value: "4,000+", label: "Deployed Nodes in Production" },
-  { value: "3", label: "Wireless Protocols (BLE 5.x, NFC, Sub-GHz RF)" },
+  { value: "450+", label: "Deployed Nodes in Production" },
+  { value: "3", label: "Wireless Protocols (BLE 5.x, NFC, Sub GHz RF)" },
 ];
 
 export default function ProductionStats() {
