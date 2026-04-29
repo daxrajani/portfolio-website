@@ -141,7 +141,7 @@ export default function Contact() {
             </div>
 
             <p className="text-slate-400 text-sm italic">
-              Open to relocation anywhere across Canada — in-person, hybrid, or fully remote.
+              Open to relocation anywhere across Canada: in-person, hybrid, or fully remote.
             </p>
           </motion.div>
 

@@ -75,7 +75,7 @@ export const personalInfo: PersonalInfo = {
     "MEng @ Concordia University 2026",
     "3× Provincial Powerlifting Gold Medalist",
   ],
-  bio: "Close to two years writing production embedded C firmware on ARM Cortex-M microcontrollers. Currently finishing a Master of Engineering at Concordia University in Montreal. Competitive powerlifter. 3× Provincial Gold Medalist.",
+  bio: "Embedded firmware engineer with 2+ years of production experience across 4 shipped firmware projects on ARM Cortex-M0+, M4, and M33 processors. Specialized in BLE 5.x, NFC, sub-GHz wireless, FreeRTOS, secure OTA bootloaders, and crash diagnostics. Graduating MEng ECE Concordia 2026.",
   email: "daxrajani@gmail.com",
   phone: "343.988.3978",
   location: "Montreal, QC, Canada",
@@ -92,30 +92,31 @@ export const workExperience: WorkExperience[] = [
     location: "Ahmedabad, Gujarat, India",
     roles: [
       {
-        title: "Associate Engineer, Embedded Software",
+        title: "Associate Engineer, Embedded Firmware",
         type: "Full-time",
         duration: "Jul 2023 – Aug 2024",
         bullets: [
-          "Designed and implemented connection-management firmware for a low-power wireless star network in embedded C on ARM Cortex-M, including channel scanning, node registration, identifier exchange, and automatic recovery paths across 4,000+ deployed nodes.",
-          "Reduced wearable power consumption by 30% by migrating legacy wireless communication to BLE and restructuring RTOS task scheduling to minimize active-state time during continuous telemetry workloads.",
-          "Improved indoor ranging accuracy by 25% by combining signal-strength based distance estimation with strict packet-validation filters for real-time wireless advertisements.",
-          "Increased packet transfer reliability by 20% by implementing frame parsing, CRC validation, and structured retry logic between host and edge controllers over UART and SPI.",
-          "Built robust OTA and recovery workflows using dual-image update patterns, rollback-safe boot behavior, and staged firmware delivery across connected embedded targets.",
-          "Integrated production-grade crash diagnostics and reboot telemetry, enabling faster root-cause analysis for field failures in memory- and power-constrained devices.",
-          "Reduced host command-dispatch overhead by 15% by developing transport-agnostic USB/UART control firmware with interrupt-driven execution and optimized state-machine transitions.",
+          "Resolved a production memory leak under a manufacturing deadline by delivering a validated golden firmware image before a 450-unit production run, preventing field failures across the entire batch.",
+          "Reduced embedded device power consumption by 30% by restructuring FreeRTOS task architecture from periodic polling to interrupt-driven event handling, extending battery life without impacting real-time data throughput.",
+          "Proactively identified and fixed a rare concurrent timing defect in a real-time BLE ranging system by developing a systematic reproduction strategy, reducing an intermittent once-per-day bug to a reliably reproducible state within 3 days.",
+          "Built a remote firmware crash diagnostic pipeline enabling coredump retrieval from deployed embedded devices over a Sub-GHz wireless network with automated cloud upload, eliminating the need for physical hardware access during field debugging.",
+          "Extended a multi-target OTA firmware update system to support a BLE fallback delivery path with persistent state across 3 co-processors and CRC validation, ensuring update integrity when the primary wireless connection was unavailable.",
+          "Implemented BLE central role connection management and GATT characteristic data parsing on a secondary wearable device to establish real-time sensor data transfer from a paired primary device.",
+          "Performed multi-temperature battery discharge cycle testing at 0°C, room temperature, and 50°C to generate and validate a production fuel gauge golden image.",
         ],
         tech: [
           "Embedded C",
           "ARM Cortex-M",
           "FreeRTOS",
           "BLE",
-          "Low-Power RF Networks",
+          "Sub-GHz RF",
           "UART",
           "SPI",
           "USB",
           "OTA/DFU",
           "A/B Firmware Update",
           "CRC",
+          "Memfault",
           "JTAG",
           "Oscilloscope",
           "Logic Analyzer",
@@ -127,15 +128,15 @@ export const workExperience: WorkExperience[] = [
         type: "Internship",
         duration: "Dec 2022 – Jun 2023",
         bullets: [
-          "Resolved a critical memory exhaustion defect in production BLE ToF Sensor firmware within 2 weeks — 4,000+ deployed sensors were resetting every 5 to 10 seconds across client infrastructure. Traced every heap allocation and deallocation call across a multithreaded state machine codebase to identify and fix the root cause.",
-          "Built a prototype WiRa indoor positioning system on the DA14695 BLE SoC — multiple sensor nodes advertised over BLE, a central device calculated inter-node distances using RSSI, and custom validation logic filtered non-compliant advertising packets before processing.",
-          "Built foundation in bare-metal C, FreeRTOS, Yocto Linux, ARM Cortex-M, I2C, SPI, UART, BLE, sensor integration, and hardware debugging using oscilloscope, logic analyzer, and JTAG.",
+          "Diagnosed and resolved a production-critical BLE firmware memory exhaustion defect within 2 weeks — heap allocations in the BLE scan path were causing the initial hardware validation units to reset every 5–10 seconds — and delivered a stable golden firmware image before the scheduled 450-unit production manufacturing run, preventing the defect from reaching the full production batch.",
+          "Prototyped a wireless proximity and ranging system on an ARM Cortex-M33 BLE SoC, implementing RSSI-based distance calculation with data-frame validation logic for filtering malformed sensor packets.",
+          "Built practical foundation in bare-metal C, FreeRTOS, ARM Cortex-M, BLE, NFC, Sub-GHz wireless, UART/SPI/I2C, JTAG debugging, and production crash diagnostics.",
         ],
         tech: [
           "Embedded C",
-          "ARM Cortex-M",
-          "DA14695",
+          "ARM Cortex-M33",
           "BLE",
+          "NFC",
           "FreeRTOS",
           "Yocto Linux",
           "I2C",
@@ -156,9 +157,9 @@ export const workExperience: WorkExperience[] = [
 export const projects: Project[] = [
   {
     name: "Zephyr BLE Sensor Node",
-    subtitle: "Embedded Firmware Project — Zephyr BLE Peripheral",
+    subtitle: "Embedded Firmware Project: Zephyr BLE Peripheral",
     description:
-      "BLE 5 peripheral firmware on nRF52840 built with Zephyr RTOS. Implements a custom 128-bit GATT service with temperature, humidity, and configurable sample rate characteristics. Features LE Secure Connections pairing, per-characteristic CCCD notification tracking, NVS-backed settings persistence, Eddystone-URL beacon advertising, and automatic re-advertising on disconnect via Zephyr work queue.",
+      "BLE 5 peripheral firmware on nRF52840 built with Zephyr RTOS. Implements a custom 128-bit GATT service with temperature, humidity, and configurable sample rate characteristics. Features LE Secure Connections pairing, per-characteristic CCCD notification tracking, NVS-backed settings persistence, Eddystone-URL beacon advertising, and automatic re-advertising on disconnect via Zephyr work queue. Deployed and tested on nRF52840 DK hardware.",
     tech: [
       "C",
       "Zephyr RTOS",
@@ -176,9 +177,9 @@ export const projects: Project[] = [
   },
   {
     name: "Secure A/B OTA Bootloader on nRF52840",
-    subtitle: "Embedded Firmware Project — Zephyr + MCUboot",
+    subtitle: "Embedded Firmware Project: Zephyr + MCUboot",
     description:
-      "Production-grade OTA firmware update system on nRF52840 using MCUboot with swap-scratch A/B slots, ECDSA-P256 image signing, and BLE SMP wireless delivery via nRF Connect mobile. Implements automatic image confirmation and rollback on boot failure, static partition pinning across NCS upgrades, and GitHub Actions CI that builds and verifies signed binaries on every push.",
+      "Production-grade OTA firmware update system on nRF52840 using MCUboot with swap-scratch A/B slots, ECDSA-P256 image signing, and BLE SMP wireless delivery via nRF Connect mobile. Implements automatic image confirmation and rollback on boot failure, static partition pinning across NCS upgrades, and GitHub Actions CI that builds and verifies signed binaries on every push. Extends professional OTA experience from prior production multi-target firmware update systems in a commercial wearable product.",
     tech: [
       "C",
       "MCUboot",
@@ -194,7 +195,7 @@ export const projects: Project[] = [
   },
   {
     name: "Scalable E-Commerce Analytics Pipeline",
-    subtitle: "Distributed Systems Project — Spark + GCP Dataproc",
+    subtitle: "Distributed Systems Project: Spark + GCP Dataproc",
     description:
       "Built a distributed analytics pipeline for a 42M-event e-commerce dataset with ETL, sessionization, funnel conversion, attribution, and anomaly detection stages. Ran live cloud benchmarks and scaling experiments, and added an interactive dashboard for job execution, logs, VM metrics, and fault-tolerance demonstrations.",
     tech: [
@@ -218,31 +219,38 @@ export const skills: SkillGroup[] = [
     skills: ["C", "Embedded C", "C++", "Python", "Bash"],
   },
   {
-    category: "Microcontrollers & Hardware",
+    category: "Microcontrollers & SoCs",
     skills: [
-      "ARM Cortex-M3/M4",
-      "Dialog DA14695",
-      "Microchip Studio",
+      "ARM Cortex-M0+",
+      "ARM Cortex-M33",
+      "nRF52840",
+      "ARM Cortex-M0+ BLE SoC",
+      "ARM Cortex-M33 BLE SoC",
+      "Microchip Sub-GHz SoC",
       "NXP MCUs",
     ],
   },
   {
-    category: "RTOS & Operating Systems",
+    category: "RTOS & OS",
     skills: [
       "FreeRTOS",
       "Zephyr RTOS",
-      "MCUboot",
-      "nRF Connect SDK",
       "Yocto Linux",
       "Embedded Linux",
-      "Cross-compiler Toolchains",
+    ],
+  },
+  {
+    category: "Wireless Protocols",
+    skills: [
+      "BLE 5.x (Central + Peripheral)",
+      "NFC (ISO 14443)",
+      "Sub-GHz RF (star topology)",
+      "Eddystone-URL",
     ],
   },
   {
     category: "Communication Protocols",
     skills: [
-      "BLE",
-      "MiWi (Proprietary)",
       "UART",
       "SPI",
       "I2C",
@@ -251,12 +259,47 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    category: "Debug Tools",
+    category: "Bootloaders & OTA",
+    skills: [
+      "MCUboot",
+      "A/B swap",
+      "ECDSA-P256 image signing",
+      "BLE OTA",
+      "USB DFU",
+      "multi-target OTA",
+      "dual-stage bootloader",
+      "imgtool",
+      "DFU",
+    ],
+  },
+  {
+    category: "Crash Diagnostics",
+    skills: [
+      "Memfault (coredump, trace events, reboot tracking, metrics heartbeat)",
+    ],
+  },
+  {
+    category: "Cryptography & Security",
+    skills: [
+      "ECDSA-P256",
+      "ECDH",
+      "SHA-256",
+      "NFC password protection",
+      "secure boot",
+    ],
+  },
+  {
+    category: "Debug & Tools",
     skills: [
       "JTAG",
+      "J-Link",
+      "GDB",
+      "SEGGER RTT",
       "Oscilloscope",
       "Logic Analyzer",
-      "Digital Multimeter",
+      "nRF Connect SDK",
+      "west",
+      "Eclipse CDT",
     ],
   },
   {
@@ -308,7 +351,7 @@ export const education: Education[] = [
 
 export const awards: Award[] = [
   {
-    title: "Emerging Star of the Year 2023–24",
+    title: "Emerging Star of the Year 2023-24",
     issuer: "Glide Technology Pvt. Ltd.",
     date: "Jul 2024",
     description:
@@ -316,7 +359,7 @@ export const awards: Award[] = [
     highlight: false,
   },
   {
-    title: "Certificate of Excellence — Volunteer of the Year 2023–24",
+    title: "Certificate of Excellence: Volunteer of the Year 2023-24",
     issuer: "Glide Technology Pvt. Ltd.",
     date: "Jul 2024",
     description:
@@ -331,13 +374,13 @@ export const awards: Award[] = [
     highlight: false,
   },
   {
-    title: "Baroda Achiever Award — Best in Sports",
+    title: "Baroda Achiever Award: Best in Sports",
     issuer: "Bank of Baroda / Ganpat University",
     date: "Jun 2022",
     highlight: false,
   },
   {
-    title: "3× Provincial & District Gold Medals — Powerlifting",
+    title: "3x Provincial and District Gold Medals: Powerlifting",
     issuer: "Competitive Powerlifting",
     date: "2020 – 2023",
     description:

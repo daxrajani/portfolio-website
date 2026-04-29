@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import Hero from "@/components/sections/Hero";
+import ProductionStats from "@/components/sections/ProductionStats";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
@@ -26,6 +27,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <ProductionStats />
       <Experience />
       <Projects />
       <Skills />
