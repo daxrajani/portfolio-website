@@ -61,7 +61,14 @@ export default function Projects() {
                   {project.name}
                 </h3>
                 <p className="text-slate-500 text-sm mt-1">{project.subtitle}</p>
-                <span className="terminal-tag mt-3 inline-flex w-fit">Engineering Build</span>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="terminal-tag inline-flex w-fit">Engineering Build</span>
+                  <span className="terminal-tag inline-flex w-fit">
+                    {project.tech.some((t) => ["C", "Zephyr RTOS", "MCUboot"].includes(t))
+                      ? "Embedded Firmware"
+                      : "Systems Analytics"}
+                  </span>
+                </div>
 
                 {/* Description */}
                 <p className="text-slate-600 text-sm mt-3 leading-relaxed flex-1">
@@ -76,7 +83,7 @@ export default function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="bg-blue-50 text-blue-700 border border-blue-200 rounded-full px-3 py-1 text-xs"
+                      className="pcb-chip px-3 py-1 text-xs font-medium"
                     >
                       {t}
                     </span>

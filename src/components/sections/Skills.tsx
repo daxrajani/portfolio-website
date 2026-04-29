@@ -68,7 +68,7 @@ export default function Skills() {
                       delay: gi * 0.07 + si * 0.04,
                     }}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-blue-50 text-blue-700 border border-blue-200 rounded-full px-3 py-1 text-sm cursor-default transition-colors duration-200 hover:bg-blue-100"
+                    className="pcb-chip px-3 py-1 text-sm cursor-default transition-colors duration-200"
                   >
                     {skill}
                   </motion.span>
@@ -92,7 +92,7 @@ export default function Skills() {
           <div className="flex flex-wrap gap-3">
             {coreStack.map((item, i) => (
               <span key={item} className="flex items-center gap-3">
-                <span className="text-slate-800 font-bold text-lg border border-slate-200 rounded-xl px-4 py-2 bg-white shadow-sm">
+                <span className="pcb-chip text-slate-800 font-bold text-lg px-4 py-2 shadow-sm">
                   {item}
                 </span>
                 {i < coreStack.length - 1 && (
