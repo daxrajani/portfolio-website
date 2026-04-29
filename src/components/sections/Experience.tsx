@@ -92,8 +92,19 @@ export default function Experience() {
                     initial={{ opacity: 0, x: 40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 * ri }}
-                  className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-300"
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 0.1 * ri,
+                      y: {
+                        duration: 5.5 + ri * 0.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: ri * 0.2,
+                      },
+                    }}
+                    animate={{ y: [0, -7, 0] }}
+                    className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-300"
                   >
                     {/* Role header */}
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-4">

@@ -84,12 +84,11 @@ export default function CreativeSectionDecor({ variant }: { variant: DecorVarian
           <motion.span
             key={label}
             initial={{ opacity: 0, y: -8 }}
-            whileInView={{ opacity: 1, y: 0, x: 0, rotate: 0 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.4 }}
             style={{
               x: i % 2 === 0 ? leftDrift : rightDrift,
-              rotate: spin,
             }}
             className="pcb-chip inline-flex items-center gap-1 px-2 py-1 text-[10px] font-bold uppercase tracking-wide shadow-lg"
           >

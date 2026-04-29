@@ -36,8 +36,19 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
               whileHover={{ scale: 1.02 }}
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: i * 0.1,
+                y: {
+                  duration: 6 + i * 0.6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.2,
+                },
+              }}
               className="group embedded-panel rounded-2xl overflow-hidden flex flex-col hover:shadow-md hover:shadow-slate-200 transition-shadow duration-300"
             >
               {/* Top accent gradient line */}

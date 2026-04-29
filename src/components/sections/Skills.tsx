@@ -51,7 +51,18 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: gi * 0.07 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: gi * 0.07,
+                y: {
+                  duration: 5.2 + gi * 0.45,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: gi * 0.15,
+                },
+              }}
+              animate={{ y: [0, -6, 0] }}
               className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-slate-200 hover:scale-[1.02] transition-all duration-300"
             >
               <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
