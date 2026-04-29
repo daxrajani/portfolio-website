@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
-import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 // Core-stack entries are derived from portfolio skill groups to avoid hardcoding.
 // We pull one representative item from each primary embedded-systems category.
@@ -25,8 +24,7 @@ const coreStack: string[] = skills.flatMap((group) => {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-4 relative overflow-hidden">
-      <CreativeSectionDecor variant="skills" />
+    <section id="skills" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <motion.div
@@ -51,18 +49,7 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: gi * 0.07,
-                y: {
-                  duration: 5.2 + gi * 0.45,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: gi * 0.15,
-                },
-              }}
-              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: gi * 0.07 }}
               className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-slate-200 hover:scale-[1.02] transition-all duration-300"
             >
               <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">

@@ -6,12 +6,10 @@ import Image from "next/image";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import HighlightedText from "@/components/ui/HighlightedText";
 import { projects } from "@/data/portfolio";
-import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4 relative overflow-hidden">
-      <CreativeSectionDecor variant="projects" />
+    <section id="projects" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <motion.div
@@ -37,18 +35,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
-              animate={{ y: [0, -8, 0] }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: i * 0.1,
-                y: {
-                  duration: 6 + i * 0.6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.2,
-                },
-              }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
               className="group embedded-panel rounded-2xl overflow-hidden flex flex-col hover:shadow-md hover:shadow-slate-200 transition-shadow duration-300"
             >
               {/* Top accent gradient line */}

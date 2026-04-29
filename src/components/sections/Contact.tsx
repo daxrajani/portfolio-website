@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { personalInfo } from "@/data/portfolio";
-import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -57,8 +56,7 @@ export default function Contact() {
     "w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-200";
 
   return (
-    <section id="contact" className="py-24 px-4 relative overflow-hidden">
-      <CreativeSectionDecor variant="contact" />
+    <section id="contact" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <motion.div

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 const stats = [
   { value: "4", label: "Production Firmware Projects Shipped" },
@@ -12,8 +11,7 @@ const stats = [
 
 export default function ProductionStats() {
   return (
-    <section className="px-4 pb-12 relative overflow-hidden">
-      <CreativeSectionDecor variant="stats" />
+    <section className="px-4 pb-12">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

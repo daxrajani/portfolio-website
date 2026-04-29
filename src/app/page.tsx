@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main className="embedded-shell creative-mode">
+    <main className="embedded-shell">
       <Hero />
       <ProductionStats />
       <Experience />

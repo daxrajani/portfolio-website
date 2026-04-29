@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { workExperience } from "@/data/portfolio";
 import HighlightedText from "@/components/ui/HighlightedText";
-import CreativeSectionDecor from "@/components/sections/CreativeSectionDecor";
 
 function RoleBadge({ type }: { type: string }) {
   if (type === "Full-time") {
@@ -23,8 +22,7 @@ function RoleBadge({ type }: { type: string }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 relative overflow-hidden">
-      <CreativeSectionDecor variant="experience" />
+    <section id="experience" className="py-24 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Section heading */}
         <motion.div
@@ -92,18 +90,7 @@ export default function Experience() {
                     initial={{ opacity: 0, x: 40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "easeOut",
-                      delay: 0.1 * ri,
-                      y: {
-                        duration: 5.5 + ri * 0.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: ri * 0.2,
-                      },
-                    }}
-                    animate={{ y: [0, -7, 0] }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 * ri }}
                     className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-300"
                   >
                     {/* Role header */}
