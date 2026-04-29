@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Award, Trophy } from "lucide-react";
 import { education, awards } from "@/data/portfolio";
+import HighlightedText from "@/components/ui/HighlightedText";
 
 export default function Education() {
   return (
@@ -120,7 +121,11 @@ export default function Education() {
                       <p className="text-slate-500 text-sm mt-0.5">{award.issuer}</p>
                       {award.description && (
                         <p className="text-slate-500 text-sm mt-2">
-                          {award.description}
+                          <HighlightedText
+                            text={award.description}
+                            className="text-slate-500 text-sm"
+                            extraKeywords={["award", "recognition", "gold", "medals"]}
+                          />
                         </p>
                       )}
                     </div>
@@ -154,7 +159,11 @@ export default function Education() {
                     <p className="text-slate-500 text-sm mt-0.5">{award.issuer}</p>
                     {award.description && (
                       <p className="text-slate-500 text-sm mt-2">
-                        {award.description}
+                        <HighlightedText
+                          text={award.description}
+                          className="text-slate-500 text-sm"
+                          extraKeywords={["award", "recognition", "gold", "medals"]}
+                        />
                       </p>
                     )}
                   </div>

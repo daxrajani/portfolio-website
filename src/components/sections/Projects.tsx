@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { GithubIcon } from "@/components/ui/brand-icons";
+import HighlightedText from "@/components/ui/HighlightedText";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
@@ -63,7 +64,10 @@ export default function Projects() {
 
                 {/* Description */}
                 <p className="text-slate-600 text-sm mt-3 leading-relaxed flex-1">
-                  {project.description}
+                  <HighlightedText
+                    text={project.description}
+                    className="text-slate-600 text-sm leading-relaxed"
+                  />
                 </p>
 
                 {/* Tech chips */}

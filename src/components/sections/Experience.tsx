@@ -3,28 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { workExperience } from "@/data/portfolio";
-
-
-/** Highlight quantified numbers inside bullet text */
-function HighlightedBullet({ text }: { text: string }) {
-  // Match percentages, scaled numbers, and short durations.
-  const parts = text.split(
-    /(\b\d+[,.]?\d*%|\b\d+[+]|\b\d+\s*(?:days?|weeks?)\b|\b\d+\s*to\s*\d+\s*seconds\b)/g
-  );
-  return (
-    <span className="text-slate-600 text-sm leading-relaxed">
-      {parts.map((part, i) =>
-        /(\b\d+[,.]?\d*%|\b\d+[+]|\b\d+\s*(?:days?|weeks?)\b|\b\d+\s*to\s*\d+\s*seconds\b)/.test(part) ? (
-          <span key={i} className="text-blue-600 font-semibold">
-            {part}
-          </span>
-        ) : (
-          <span key={i}>{part}</span>
-        )
-      )}
-    </span>
-  );
-}
+import HighlightedText from "@/components/ui/HighlightedText";
 
 function RoleBadge({ type }: { type: string }) {
   if (type === "Full-time") {
@@ -144,7 +123,10 @@ export default function Experience() {
                             className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500"
                             aria-hidden="true"
                           />
-                          <HighlightedBullet text={bullet} />
+                          <HighlightedText
+                            text={bullet}
+                            className="text-slate-600 text-sm leading-relaxed"
+                          />
                         </motion.li>
                       ))}
                     </ul>

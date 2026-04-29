@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import { ChevronDown } from "lucide-react";
 import type { Easing } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
+import HighlightedText from "@/components/ui/HighlightedText";
 import { personalInfo } from "@/data/portfolio";
 
 const EASE_OUT: Easing = "easeOut";
@@ -95,7 +96,10 @@ export default function Hero() {
           {...fadeUp(0.3)}
           className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed"
         >
-          {personalInfo.bio}
+          <HighlightedText
+            text={personalInfo.bio}
+            className="text-slate-500 text-base md:text-lg leading-relaxed"
+          />
         </motion.p>
 
         {/* CTA buttons */}
