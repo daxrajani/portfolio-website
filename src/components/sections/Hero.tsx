@@ -7,6 +7,7 @@ import { ChevronDown, Cpu, Radio, ShieldCheck } from "lucide-react";
 import type { Easing } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import HighlightedText from "@/components/ui/HighlightedText";
+import CreativeOverlays from "@/components/sections/CreativeOverlays";
 import { personalInfo } from "@/data/portfolio";
 
 const EASE_OUT: Easing = "easeOut";
@@ -59,6 +60,7 @@ export default function Hero() {
       <div className="hero-beam hero-beam-b" aria-hidden="true" />
       <div className="hero-ring hero-ring-a" aria-hidden="true" />
       <div className="hero-ring hero-ring-b" aria-hidden="true" />
+      <CreativeOverlays />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto w-full gap-6">
