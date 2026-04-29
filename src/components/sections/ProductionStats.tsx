@@ -18,11 +18,12 @@ export default function ProductionStats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="bg-white border border-slate-200 shadow-sm rounded-2xl p-8"
+          className="embedded-panel rounded-2xl p-8"
         >
-          <p className="text-slate-500 text-sm uppercase tracking-widest font-medium mb-6">
+          <p className="text-slate-500 text-sm uppercase tracking-widest font-medium mb-3">
             Production Experience At A Glance
           </p>
+          <p className="terminal-tag inline-flex mb-6">Field Proven Metrics</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div

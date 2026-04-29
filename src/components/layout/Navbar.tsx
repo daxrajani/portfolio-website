@@ -44,7 +44,7 @@ export default function Navbar() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm"
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm trace-divider"
           : "bg-transparent"
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
           <button
             onClick={handleScrollTop}
             aria-label="Scroll to top"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity tracking-tight"
           >
             DR
           </button>

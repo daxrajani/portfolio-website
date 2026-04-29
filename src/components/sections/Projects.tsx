@@ -36,7 +36,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="group bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden flex flex-col hover:shadow-md hover:shadow-slate-200 transition-shadow duration-300"
+              className="group embedded-panel rounded-2xl overflow-hidden flex flex-col hover:shadow-md hover:shadow-slate-200 transition-shadow duration-300"
             >
               {/* Top accent gradient line */}
               <div className="h-[3px] w-full bg-gradient-to-r from-blue-600 to-emerald-600 rounded-t-2xl shrink-0" />
@@ -61,6 +61,7 @@ export default function Projects() {
                   {project.name}
                 </h3>
                 <p className="text-slate-500 text-sm mt-1">{project.subtitle}</p>
+                <span className="terminal-tag mt-3 inline-flex w-fit">Engineering Build</span>
 
                 {/* Description */}
                 <p className="text-slate-600 text-sm mt-3 leading-relaxed flex-1">

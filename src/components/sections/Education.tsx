@@ -33,7 +33,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-              className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 hover:scale-[1.01] transition-all duration-300"
+              className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 hover:scale-[1.01] transition-all duration-300"
             >
               {/* Degree & field */}
               <h3 className="text-xl font-bold text-slate-900 leading-snug">
@@ -141,7 +141,7 @@ export default function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
-                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-200"
+                className="embedded-panel rounded-2xl p-5 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-200"
               >
                 <div className="flex items-start gap-4">
                   <div className="shrink-0 mt-0.5">

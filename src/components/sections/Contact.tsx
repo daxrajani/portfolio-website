@@ -151,7 +151,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="order-1 md:order-2 bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8"
+            className="order-1 md:order-2 embedded-panel rounded-2xl p-6 md:p-8"
           >
             <form onSubmit={handleSubmit} noValidate>
               <div className="flex flex-col gap-4">

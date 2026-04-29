@@ -91,7 +91,7 @@ export default function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 * ri }}
-                    className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-300"
+                  className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-blue-100 transition-shadow duration-300"
                   >
                     {/* Role header */}
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-4">

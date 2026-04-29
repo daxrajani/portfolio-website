@@ -90,6 +90,9 @@ export default function Hero() {
             className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent"
           />
         </motion.div>
+        <motion.span {...fadeUp(0.25)} className="terminal-tag">
+          Production Firmware | Wireless Systems | Hardware Validation
+        </motion.span>
 
         {/* Bio */}
         <motion.p

@@ -50,7 +50,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut", delay: gi * 0.07 }}
-              className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md hover:shadow-slate-200 hover:scale-[1.02] transition-all duration-300"
+              className="embedded-panel rounded-2xl p-6 hover:shadow-md hover:shadow-slate-200 hover:scale-[1.02] transition-all duration-300"
             >
               <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
                 {group.category}
@@ -84,7 +84,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-          className="bg-slate-50 border border-slate-200 rounded-2xl p-6"
+          className="embedded-panel rounded-2xl p-6"
         >
           <p className="text-slate-500 text-sm mb-4 uppercase tracking-widest font-medium">
             Core Stack

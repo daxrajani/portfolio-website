@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="embedded-shell">
       <Hero />
       <ProductionStats />
       <Experience />

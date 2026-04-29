@@ -3,7 +3,7 @@ import { personalInfo } from "@/data/portfolio";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-slate-100 border-t border-slate-200 py-10 px-4">
+    <footer className="relative bg-slate-100 border-t border-slate-200 py-10 px-4 trace-divider">
       {/* Top gradient border */}
       <div
         className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-blue-600/50 via-emerald-600/50 to-blue-600/50"
@@ -52,6 +52,7 @@ export default function Footer() {
           &copy; 2026 {personalInfo.name}. Built with Next.js and deployed on
           Vercel.
         </p>
+        <span className="terminal-tag">Embedded Systems Portfolio</span>
       </div>
     </footer>
   );
