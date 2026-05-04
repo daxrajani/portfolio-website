@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { ChevronDown, Cpu, Radio, ShieldCheck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import type { Easing } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import HighlightedText from "@/components/ui/HighlightedText";
@@ -90,29 +90,14 @@ export default function Hero() {
             className="text-xl md:text-2xl font-medium bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent"
           />
         </motion.div>
-        <motion.span {...fadeUp(0.25)} className="terminal-tag">
-          Production Firmware | Wireless Systems | Hardware Validation
-        </motion.span>
-        <motion.div
-          {...fadeUp(0.28)}
-          className="embedded-panel rounded-2xl px-4 py-3 w-full max-w-2xl"
+        <motion.p
+          {...fadeUp(0.25)}
+          className="text-center text-sm sm:text-base md:text-lg font-semibold tracking-wide text-slate-700 max-w-3xl px-2"
         >
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="pcb-chip inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold">
-              <Cpu size={14} aria-hidden="true" />
-              ARM Cortex M
-            </span>
-            <span className="pcb-chip inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold">
-              <Radio size={14} aria-hidden="true" />
-              BLE | NFC | Sub GHz
-            </span>
-            <span className="pcb-chip inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold">
-              <ShieldCheck size={14} aria-hidden="true" />
-              Secure OTA
-            </span>
-          </div>
-          <div className="pcb-track mt-3" aria-hidden="true" />
-        </motion.div>
+          <span className="bg-gradient-to-r from-blue-700 via-slate-800 to-emerald-700 bg-clip-text text-transparent">
+            ARM Cortex M production firmware · BLE · NFC · Sub GHz · secure OTA · ship-ready systems
+          </span>
+        </motion.p>
 
         {/* Bio */}
         <motion.p

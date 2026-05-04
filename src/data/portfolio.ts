@@ -75,7 +75,7 @@ export const personalInfo: PersonalInfo = {
     "MEng @ Concordia University 2026",
     "3× Provincial Powerlifting Gold Medalist",
   ],
-  bio: "Develop embedded firmware solutions with 2+ years of production experience across 4 shipped projects on ARM Cortex M processors. Deliver BLE 5.x, NFC, Sub GHz wireless, FreeRTOS, secure OTA bootloaders, and crash diagnostics. Complete MEng ECE at Concordia University in 2026.",
+  bio: "Develop embedded firmware solutions with 1.5+ years of production experience across 4 shipped projects on ARM Cortex M processors. Deliver BLE 5.x, NFC, Sub GHz wireless, FreeRTOS, secure OTA bootloaders, and crash diagnostics. Complete MEng ECE at Concordia University in 2026.",
   email: "daxrajani@gmail.com",
   phone: "343.988.3978",
   location: "Montreal, QC, Canada",
@@ -328,7 +328,7 @@ export const education: Education[] = [
     field: "Electrical and Computer Engineering",
     university: "Concordia University",
     location: "Montreal, QC, Canada",
-    duration: "Sep 2024 – Apr 2026 (Expected)",
+    duration: "Sep 2024 – May 2026",
     courses: [
       "Applied Machine Learning",
       "Computer Neural Networks",
