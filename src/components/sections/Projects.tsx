@@ -64,9 +64,10 @@ export default function Projects() {
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="terminal-tag inline-flex w-fit">Engineering Build</span>
                   <span className="terminal-tag inline-flex w-fit">
-                    {project.tech.some((t) => ["C", "Zephyr RTOS", "MCUboot"].includes(t))
-                      ? "Embedded Firmware"
-                      : "Systems Analytics"}
+                    {project.category ??
+                      (project.tech.some((t) => ["C", "Zephyr RTOS", "MCUboot"].includes(t))
+                        ? "Embedded Firmware"
+                        : "Systems Analytics")}
                   </span>
                 </div>
 

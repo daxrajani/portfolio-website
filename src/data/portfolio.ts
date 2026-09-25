@@ -38,6 +38,7 @@ export interface Project {
   tech: string[];
   github: string | null;
   demo: string | null;
+  category?: string;
   image?: string;
   imageAlt?: string;
 }
@@ -172,6 +173,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/daxrajani/zephyr_ble_app",
     demo: null,
+    category: "Embedded Firmware",
     image: "/projects/hardware_setup.jpg",
     imageAlt: "ARM Cortex M BLE development board running Dax BLE firmware connected via mobile scanner",
   },
@@ -192,6 +194,44 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/daxrajani/nrf52840-mcuboot-ble-ota",
     demo: null,
+    category: "Embedded Firmware",
+  },
+  {
+    name: "BLE RSSI Distance Classifier",
+    subtitle: "Embedded ML Project: On-Device Inference on Zephyr",
+    description:
+      "Built an on-device ML classifier that buckets a BLE device's distance into near, mid, and far from RSSI alone on an ARM Cortex M BLE controller running Zephyr RTOS, with no extra hardware. Wrote a BLE observer firmware and host pipeline to collect and label 850 samples, trained an INT8 quantized dense network, and implemented a hand-rolled INT8 forward pass in C without TFLite Micro, verified against an independent Python reimplementation. Reached 96.2% held-out accuracy, beating a hand-tuned threshold baseline by 20.7 points, with 61 to 91 µs on-chip inference latency. Backed feature and architecture choices with a sweep and benchmarked head to head against an Edge Impulse AutoML pipeline on the same dataset.",
+    tech: [
+      "C",
+      "Zephyr RTOS",
+      "BLE",
+      "TinyML",
+      "INT8 Quantization",
+      "Python",
+      "ARM Cortex M BLE Controller",
+      "Edge Impulse",
+    ],
+    github: "https://github.com/daxrajani/ble-rssi-ml-classifier",
+    demo: null,
+    category: "Embedded ML",
+  },
+  {
+    name: "BLE Clock-Skew Fingerprinting",
+    subtitle: "Embedded Security Research: RF Side Channel Analysis",
+    description:
+      "Tested whether crystal oscillator timing drift, a side channel outside the Bluetooth specification's threat model, can defeat BLE MAC address randomization. Built passive Zephyr BLE observer firmware on an ARM Cortex M BLE controller that logs every advertisement with millisecond timestamps, then a Python pipeline that fits each device's clock fingerprint from its advertising interval sequence while accounting for BLE's mandatory random advDelay dither, and matches vanished and appeared MAC pairs by statistical confidence. Validated the method against synthetic ground truth data before running a 1 hour real capture of 133,210 packets across 60 ambient devices, which caught a MAC rotation cleanly and surfaced and fixed three real bugs in the matching pipeline.",
+    tech: [
+      "C",
+      "Zephyr RTOS",
+      "BLE",
+      "Python",
+      "Signal Analysis",
+      "Privacy & Security",
+      "ARM Cortex M BLE Controller",
+    ],
+    github: "https://github.com/daxrajani/ble-clock-skew-fingerprinting",
+    demo: null,
+    category: "Embedded Security",
   },
   {
     name: "Scalable E-Commerce Analytics Pipeline",
@@ -208,6 +248,26 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/daxrajani/dss_project",
     demo: null,
+    category: "Systems Analytics",
+  },
+  {
+    name: "Health Symptom Analyzer",
+    subtitle: "Machine Learning Project: Calibrated Ensemble Classifier",
+    description:
+      "Built a symptom based multi class disease classification system using a calibrated soft voting ensemble of KNN, Naive Bayes, Decision Tree, Random Forest, SVM, Logistic Regression, and XGBoost. Added a confidence based escalation policy with thresholds tuned on a validation set that flags inconclusive predictions for clinician review, a shared inference layer served through both a Streamlit UI and a FastAPI REST service, calibration reporting with reliability curves, ECE, and Brier score, and automated tests with CI validation.",
+    tech: [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "FastAPI",
+      "Streamlit",
+      "Pandas",
+      "pytest",
+      "GitHub Actions",
+    ],
+    github: "https://github.com/daxrajani/health-symptom-analyzer",
+    demo: null,
+    category: "Machine Learning",
   },
 ];
 
