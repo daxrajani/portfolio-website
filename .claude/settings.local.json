@@ -13,7 +13,27 @@
       "Bash('/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe' --version)",
       "Bash('/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/npm.cmd' --version)",
       "Bash('/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/npm' --version)",
-      "Bash(export PATH=\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs:$PATH\")"
+      "Bash(export PATH=\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs:$PATH\")",
+      "Bash(sort echo:*)",
+      "Bash(cmd.exe /c \"choco install nodejs-lts --yes 2>&1\")",
+      "Bash(cmd.exe /c \"C:\\\\ProgramData\\\\chocolatey\\\\bin\\\\choco.exe install nodejs-lts --yes 2>&1\")",
+      "Bash(cmd.exe /c \"winget install OpenJS.NodeJS.LTS --accept-package-agreements --accept-source-agreements 2>&1\")",
+      "Bash(cmd.exe /c \"where winget 2>&1\")",
+      "Read(//c/Users/ASUS/AppData/Local/Microsoft/WindowsApps/**)",
+      "Bash(cmd.exe /c \"C:\\\\Users\\\\ASUS\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\winget.exe install OpenJS.NodeJS.LTS --accept-package-agreements --accept-source-agreements 2>&1\")",
+      "Bash(cmd.exe /c \"where node 2>&1\")",
+      "Bash(cmd.exe /c \"reg query HKLM\\\\SOFTWARE\\\\nodejs /v InstallPath 2>&1\")",
+      "Bash(cmd.exe /c \"setx PATH \\\\\"%PATH%;C:\\\\Program Files\\\\nodejs\\\\\" /M 2>&1\")",
+      "Bash(cmd.exe /c \"setx PATH \\\\\"%PATH%;C:\\\\Program Files\\\\nodejs\\\\\" 2>&1\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:portfolio-website-seven-xi-46.vercel.app)",
+      "Bash(node -e ' *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)",
+      "Bash(grep -E '\\\\.\\(tsx?|jsx?\\)$')",
+      "Bash(npx tsc *)"
     ]
   }
 }
